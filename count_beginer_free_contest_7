@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    int n;
+    cin>>n;
+    vector<long long> a(n);
+    long long s = 0;
+    for (int i = 0;i<n;i++)
+    {
+        cin>>a[i];
+        s += a[i];
+    }
+    if(s % 3 != 0) 
+    {
+        cout << 0 << endl;
+        return 0;
+    }
+    long long t = s / 3;
+    long long p = 0;
+    long long dp1 = 0; 
+    long long dp2 = 0; 
+    for(int i = 0;i<n - 1;i++)
+    {
+        p += a[i];
+        if(p == 2 * t)
+        {
+            dp2 += dp1;
+        }
+        if(p == t)
+        {
+            dp1++;
+        }
+    }
+    cout<<dp2<<'\n';
+    return 0;
+}
