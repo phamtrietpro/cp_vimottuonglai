@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+#define int long long
+#define ull unsigned long long
+#define lb lower_bound
+#define ub upper_bound
+#define pb push_back
+#define pf push_front
+#define fi first
+#define se second
+#define pii pair<int,int>
+//#define pq priority_queue
+#define pi 3.14
+#define windeptrai signed main
+const int maxn = 1e6 + 5;
+using namespace std;
+
+signed main() 
+{
+    int n;
+    cin>>n;
+    int d = n-3;
+    int mx = n-3;
+    for(int i=1;i*i<=d;i++)
+    {
+        if(d%i==0)
+        {
+            if(d/i > 3) mx = min(mx,d/i);
+            if(i > 3) mx = min(mx,i);
+        }
+    }
+    cout<<mx;
+    return 0;
+}
