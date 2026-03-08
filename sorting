@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+
+const int maxn = 2e6;
+int a[maxn + 5];
+vector<int> c;
+vector<int> l;
+signed main()
+{
+    int n;
+    cin>>n;
+    for(int i = 1;i<=n;i++)
+    {
+        cin>>a[i];
+        if(a[i] % 2 == 0)
+        {
+            c.push_back(a[i]);
+        }
+        else
+        {
+            l.push_back(a[i]);
+        }
+    }
+    sort(c.begin(),c.end());
+    sort(l.begin(),l.end());
+    vector<int>kq;
+    bool check = true;
+    int chan = 0;
+    int le = 0;
+    for(int i = 0;i<n;i++)
+    {
+        if(check)
+        {
+            if(chan < c.size()) kq.push_back(c[chan++]);
+            else kq.push_back(l[le++]);
+        }
+        else
+        {
+            if(le < l.size()) kq.push_back(l[le++]);
+            else kq.push_back(c[chan++]);
+        }
+        check = !check;
+    }
+    for(int i = 0;i<n;i++)
+    {
+        cout<<kq[i]<<" ";
+    }
+    return 0;
+}
