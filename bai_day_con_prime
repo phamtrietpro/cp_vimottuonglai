@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const int maxn = 1e6;
+int a[maxn + 5];
+bool isprime(int n)
+{
+    if(n == 1) return false;
+    if(n == 2 || n == 3) return true;
+    if(n % 2 == 0 || n % 3 == 0) return false;
+    for(int i = 5;i*i <= n;i+= 6)
+    {
+        if(n % i == 0 || n % (i+2) == 0) return false;
+    }
+    return true;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int> gay;
+    for(int i = 1;i<=n;i++)
+    {
+        cin>>a[i];
+        if(isprime(a[i]))
+        {
+            gay.push_back(i);
+        }
+    }
+    if(gay.size() == 0)
+    {
+        cout<<-1;
+        return 0;
+    }
+    int mn = INT_MAX;
+    for(int i = 1;i<gay.size();i++)
+    {
+        mn = min(mn,gay[i] - gay[i-1]);
+    }
+    cout<<mn + 1;
+    return 0;
+}
