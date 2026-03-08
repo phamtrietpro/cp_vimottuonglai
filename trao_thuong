@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+
+signed main() 
+{
+    int n,k;
+    cin>>n>>k;
+    int a1 = 1; 
+    int sum = n * (2 * a1 + (n - 1) * k) / 2;
+    cout<<sum;
+    return 0;
+}
