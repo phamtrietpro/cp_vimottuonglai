@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+#define int long long
+#define ull unsigned long long
+#define lb lower_bound
+#define ub upper_bound
+#define pb push_back
+#define pf push_front
+#define fi first
+#define se second
+#define pii pair<int,int>
+//#define pq priority_queue
+#define pi 3.14
+#define windeptrai signed main
+//const int maxn = 1e6 + 5;
+using namespace std;
+
+windeptrai() 
+{
+    int n;
+    cin>>n;
+    if(n >= 8128)
+    {
+      cout<<8658;
+      return 0;
+    }
+    else if(n >= 496 && n < 8128)
+    {
+      cout<<530;
+      return 0;
+    }
+    else if(n >= 28 && n < 496)
+    {
+      cout<<34;
+      return 0;
+    }
+    else if(n >= 6 && n < 28)
+    {
+      cout<<6;
+      return 0;
+    }
+    cout<<0;
+    return 0;
+}
