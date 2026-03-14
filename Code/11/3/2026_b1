@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int m,n,k;
+    cin>>m>>n>>k;
+    int res = min(m / 2, n);
+    while(res > 0 && (m + n - res * 3) < k)
+    {
+        res--;
+    }
+    cout << res << endl;
+    return 0;
+}
